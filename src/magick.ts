@@ -16,7 +16,7 @@ export async function svgElementToPNGFile(
     if (imageMagickPath && imageMagickPath.length) {
       await execFile(imageMagickPath, args);
     } else {
-      await imagemagickCli.exec(`convert ${args.join(" ")}`);
+      await imagemagickCli.exec(`magick ${args.join(" ")}`);
     }
   } catch (error) {
     throw new Error(
